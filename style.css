@@ -11,7 +11,7 @@
   --line:rgba(58,31,43,.14);
   --shadow:0 30px 60px -30px rgba(58,31,43,.25);
   --radius:22px;
-  --display:'Fraunces', 'Cormorant Garamond', ui-serif, Georgia, serif;
+  --display:'Outfit', 'DM Sans', ui-sans-serif, system-ui, sans-serif;
   --body:'DM Sans', ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -91,21 +91,20 @@ img{max-width:100%;display:block}
 .bar{display:inline-block;width:38px;height:1px;background:var(--muted)}
 .display{
   font-family:var(--display);
-  font-weight:400;
-  font-variation-settings:"opsz" 144, "SOFT" 100;
-  font-size:clamp(44px,7vw,96px);
-  line-height:.98;
-  letter-spacing:-.02em;
+  font-weight:760;
+  font-size:clamp(44px,7vw,92px);
+  line-height:.94;
+  letter-spacing:-.055em;
   margin:0 0 28px;
 }
 .display em{
-  font-style:italic;font-weight:300;
+  font-style:normal;font-weight:620;
   background:linear-gradient(120deg, var(--rose), var(--gold) 60%, var(--plum));
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-.display .ink{position:relative;font-style:italic;font-weight:300}
+.display .ink{position:relative;font-style:normal;font-weight:680;letter-spacing:-.045em}
 .display .ink::after{
-  content:"";position:absolute;left:-2%;right:-2%;bottom:.08em;height:.18em;
+  content:"";position:absolute;left:-2%;right:-2%;bottom:.04em;height:.2em;
   background:var(--blush);z-index:-1;border-radius:8px;
 }
 .lede{
@@ -135,7 +134,11 @@ img{max-width:100%;display:block}
 
 /* portrait */
 .hero-visual{position:relative;display:flex;justify-content:center}
-.portrait{position:relative;width:min(100%,460px);aspect-ratio:4/5}
+.portrait{
+  position:relative;width:min(100%,460px);aspect-ratio:4/5;
+  animation:portraitFloat 7s ease-in-out infinite;
+  will-change:transform;
+}
 .portrait-frame{
   position:relative;width:100%;height:100%;
   border-radius:48% 52% 46% 54% / 56% 44% 56% 44%;
@@ -153,6 +156,10 @@ img{max-width:100%;display:block}
 @keyframes morph{
   0%,100%{border-radius:48% 52% 46% 54% / 56% 44% 56% 44%}
   50%{border-radius:54% 46% 58% 42% / 44% 56% 44% 56%}
+}
+@keyframes portraitFloat{
+  0%,100%{transform:translate3d(0,0,0) rotate(-.4deg)}
+  50%{transform:translate3d(0,-16px,0) rotate(.5deg)}
 }
 .ring{position:absolute;border-radius:inherit;pointer-events:none}
 .r1{
