@@ -186,11 +186,28 @@ img{max-width:100%;display:block}
 }
 .badge.tl{top:-6%;left:-10%;font-family:var(--display);font-style:italic}
 .badge.tr{top:18%;right:-14%;background:var(--ink);color:var(--ivory);animation-delay:-2s}
-.badge.bl{bottom:18%;left:-16%;animation-delay:-4s}
+.badge.bl{
+  bottom:18%;left:-16%;
+  padding:10px 18px;
+  font-weight:700;
+  letter-spacing:.03em;
+  color:var(--ivory);
+  background:linear-gradient(135deg, var(--plum), #6f354c 52%, var(--rose));
+  border:1px solid rgba(255,255,255,.62);
+  box-shadow:
+    0 18px 40px -18px rgba(58,31,43,.62),
+    0 0 0 6px rgba(245,214,209,.38);
+  animation:float 6s ease-in-out infinite, badgeGlow 2.8s ease-in-out infinite;
+  animation-delay:-4s, 0s;
+}
 .badge.br{bottom:-4%;right:-6%;color:var(--gold);animation-delay:-3s}
 @keyframes float{
   0%,100%{transform:translateY(0)}
   50%{transform:translateY(-8px)}
+}
+@keyframes badgeGlow{
+  0%,100%{box-shadow:0 18px 40px -18px rgba(58,31,43,.62), 0 0 0 6px rgba(245,214,209,.32)}
+  50%{box-shadow:0 22px 46px -16px rgba(58,31,43,.7), 0 0 0 9px rgba(245,214,209,.5)}
 }
 
 /* ===== Marquee ===== */
